@@ -1,0 +1,19 @@
+React Methods 
+
+-> npm create vite
+-> give project name
+-> Package name
+-> Framework name
+-> Language
+-> cd project name 
+-> npm install
+-> npm run dev
+
+Components 
+
+1. Functional Components
+2. Class Components
+
+Props - It stands for properties which we can pass any information from one component to other.
+State - Any Position where we can store value.
+SetState - For increment and decrement s
