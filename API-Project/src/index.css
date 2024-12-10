@@ -1,0 +1,112 @@
+/* General container styles */
+.container {
+  margin: 20px auto;
+  max-width: 900px;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(145deg, #f5f7fa, #e4e8ec);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Form styles */
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.input {
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  outline: none;
+}
+
+.button {
+  padding: 12px 20px;
+  background: linear-gradient(145deg, #4caf50, #45a049);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.button:hover {
+  background: #388e3c;
+}
+
+/* Heading styles */
+.heading {
+  text-align: center;
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+  animation: fade-in 2s ease-in-out;
+}
+
+/* Record grid styles */
+.records {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.record-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: calc(40% - 10px);
+  text-align: center;
+  position: relative;
+  animation: fade-in 1s ease-in;
+}
+
+.record-card:hover {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.record-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.record-title {
+  font-size: 18px;
+  color: #333;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.record-price,
+.record-category,
+.record-rating {
+  font-size: 16px;
+  color: #555;
+  margin: 5px 0;
+}
+
+.record-description {
+  font-size: 14px;
+  color: #777;
+  margin: 10px 0;
+}
+
+
