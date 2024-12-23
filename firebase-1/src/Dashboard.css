@@ -1,0 +1,219 @@
+/* Base styling for body */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1e1e2f, #1a1a2e);
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill-opacity="0.03"><rect width="100%" height="100%" fill="#ffffff"/></svg>');
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: #ffffff;
+  animation: backgroundAnimation 10s infinite alternate;
+}
+
+/* Background animation */
+@keyframes backgroundAnimation {
+  0% {
+      background: linear-gradient(135deg, #1e1e2f, #1a1a2e);
+  }
+  50% {
+      background: linear-gradient(135deg, #1e1e2f, #282846);
+  }
+  100% {
+      background: linear-gradient(135deg, #2a2a3d, #1a1a2e);
+  }
+}
+
+/* Form container */
+form {
+  background: rgba(42, 42, 61, 0.95);
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  z-index: 1;
+  border: 1px solid #3e3e5b;
+  animation: formBounce 3s ease-in-out infinite;
+}
+
+/* Form bounce animation */
+@keyframes formBounce {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-5px);
+  }
+}
+
+/* Form header with dynamic titles */
+form::before {
+  content: attr(data-title);
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, #ff63c6, #6c63ff);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  color: #fff;
+  box-shadow: 0px 5px 10px rgba(108, 99, 255, 0.5);
+  animation: titleGlow 3s infinite alternate ease-in-out;
+}
+
+/* Glow effect for titles */
+@keyframes titleGlow {
+  0% {
+      box-shadow: 0px 5px 10px rgba(108, 99, 255, 0.5);
+  }
+  100% {
+      box-shadow: 0px 5px 15px rgba(255, 99, 198, 1);
+  }
+}
+
+/* Input fields */
+form input {
+  width: calc(100% - 20px);
+  padding: 12px;
+  margin: 15px 0;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  font-size: 1rem;
+  background: linear-gradient(to right, #1e1e2f, #282846) padding-box,
+              linear-gradient(to right, #6c63ff, #9c63ff) border-box;
+  color: #ffffff;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+/* Input hover and focus effects */
+form input:hover {
+  box-shadow: 0 0 15px rgba(108, 99, 255, 0.5);
+}
+
+form input:focus {
+  outline: none;
+  border-color: #6c63ff;
+  box-shadow: 0 0 10px rgba(108, 99, 255, 0.8);
+}
+
+/* Input placeholder styling */
+form input::placeholder {
+  color: #a1a1b3;
+}
+
+/* Submit button */
+form button {
+  background: linear-gradient(135deg, #6c63ff, #ff63c6);
+  color: #fff;
+  font-size: 1rem;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: buttonPulse 2s infinite;
+}
+
+/* Button pulse animation */
+@keyframes buttonPulse {
+  0% {
+      transform: scale(1);
+      box-shadow: 0px 4px 15px rgba(108, 99, 255, 0.6);
+  }
+  50% {
+      transform: scale(1.05);
+      box-shadow: 0px 6px 20px rgba(255, 99, 198, 0.8);
+  }
+  100% {
+      transform: scale(1);
+      box-shadow: 0px 4px 15px rgba(108, 99, 255, 0.6);
+  }
+}
+
+/* Link container */
+form div {
+  margin-top: 20px;
+}
+
+/* Links inside form */
+form div a {
+  color: #6c63ff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+/* Link hover effect */
+form div a:hover {
+  color: #ff63c6;
+}
+
+/* Floating background effects */
+body::before,
+body::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+  opacity: 0.2;
+  animation: floatingBlur 8s infinite ease-in-out;
+}
+
+body::before {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #6c63ff 0%, rgba(108, 99, 255, 0) 70%);
+  top: -100px;
+  left: -100px;
+}
+
+body::after {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #9c63ff 0%, rgba(156, 99, 255, 0) 70%);
+  bottom: -150px;
+  right: -150px;
+}
+
+/* Floating blur animation */
+@keyframes floatingBlur {
+  0%, 100% {
+      transform: translate(0, 0);
+  }
+  50% {
+      transform: translate(10px, 10px);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body {
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-top: 20px;
+  }
+
+  form {
+      width: 95%;
+      max-width: 350px;
+  }
+
+  form::before {
+      font-size: 1.2rem;
+      padding: 8px 15px;
+  }
+
+  form input, form button {
+      font-size: 0.9rem;
+      padding: 10px;
+  }
+}
